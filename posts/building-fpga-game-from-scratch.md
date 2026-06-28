@@ -11,7 +11,7 @@ When my digital design professor first handed us a BASYS3 board and said "build 
 
 FPGA development is fundamentally different from software. You're not writing instructions for a CPU to execute sequentially — you're *describing hardware* that all operates in parallel. Every `always @(posedge clk)` block you write becomes logic gates switching in unison. That mental shift took me a while to internalize, and Subway Slug was where it finally clicked.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel nunc vitae metus volutpat auctor. Nunc dignissim, tortor vitae blandit venenatis, enim quam accumsan est, at placerat mi turpis vel nibh. Proin efficitur bibendum sapien, sed viverra libero congue id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+The constraint that made this particularly interesting: no microcontroller, no soft-core CPU, no operating system of any kind. The game had to run purely as combinational and sequential logic — collision detection, score tracking, sprite rendering, all of it expressed as state machines and flip-flops. It forced a level of thinking about timing and resource usage that software development rarely demands.
 
 ## Designing the VGA Controller
 
@@ -28,7 +28,7 @@ always @(posedge clk_25MHz) begin
 end
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique arcu eu leo tincidunt, at viverra mi varius. Nullam dictum diam nec augue laoreet, in congue libero fringilla. Sed vel nunc ut lorem fermentum vehicula. Morbi posuere, velit et volutpat tincidunt, dolor mauris suscipit lectus, ut sodales augue ex vel augue.
+One thing that surprised me: Vivado's timing analysis was more useful than I expected once I understood how to read it. The critical path report tells you exactly which logic chain is limiting your clock frequency — and in a display system, that matters. My initial VGA controller couldn't close timing at 25 MHz until I pipelined the pixel color selection logic, splitting it across two clock cycles.
 
 ## The Race Condition That Cost Me a Weekend
 
@@ -36,7 +36,7 @@ The nastiest bug I hit was a race condition between the game logic FSM and the V
 
 The result: occasional screen tearing, corrupted sprite data, and a player character that would flicker out of existence mid-game. The fix was a double-buffer architecture: one buffer the game writes to, one the VGA controller reads from, swapped atomically at the vertical blanking interval. Classic technique, humbling that I had to rediscover it myself.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula est a leo lacinia, id pretium enim dapibus. Phasellus sit amet arcu sed nisi feugiat blandit in a tortor. Aliquam erat volutpat. Cras condimentum nisl a diam dapibus, et aliquet lorem pretium. Nam molestie felis leo, eu tristique nulla posuere vel.
+The double-buffer swap also taught me something about design philosophy: the cleaner solution isn't always the most intuitive one. My first instinct was to add a mutex — a software concept that has no clean analog in RTL. The right answer was architectural: separate the concerns at the system level rather than adding synchronization inside a shared resource.
 
 ## What I'd Do Differently
 

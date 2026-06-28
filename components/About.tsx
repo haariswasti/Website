@@ -1,9 +1,14 @@
 import FadeIn from "./FadeIn";
 
 const skills = [
-  "Python", "C/C++", "Verilog", "TypeScript", "React",
-  "PyTorch", "OpenCV", "ROS2", "FPGA Design", "Firebase",
-  "Next.js", "Linux", "Git", "Embedded Systems",
+  // Languages
+  "Python", "C/C++", "HTML",
+  // Frameworks & Libraries
+  "React", "Node.js", "Flask", "NumPy", "PyTorch",
+  // Dev Tools
+  "Git", "GitHub", "Docker", "VS Code",
+  // Domain
+  "Liquid Handling Automation", "GMP / SOP", "FPGA / Verilog",
 ];
 
 export default function About() {
@@ -24,35 +29,49 @@ export default function About() {
               <p className="text-slate-300 leading-relaxed">
                 I&apos;m a Robotics Engineering student at{" "}
                 <span className="text-sky-400 font-medium">UC Santa Cruz</span>{" "}
-                (Class of 2027), passionate about the intersection of software
-                and hardware. Whether it&apos;s building FPGA control systems in
-                Verilog or training neural networks for computer vision, I love
-                working across the full stack of intelligent machines.
+                (Class of 2027), passionate about intelligent systems and advanced
+                manufacturing. My background spans FPGA control systems, AI-powered
+                computer vision, and real-time data pipelines — and most recently,
+                automating high-throughput laboratory workflows in pharmaceutical manufacturing.
               </p>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-slate-300 leading-relaxed">
-                My experience spans AI/ML engineering internships, nonprofit
-                software development, and Formula SAE electric vehicle telemetry.
-                I&apos;m drawn to problems where software meets the physical
-                world — real-time control, sensor fusion, and systems that have
-                to work the first time.
+                My work and writing have increasingly converged on{" "}
+                <span className="text-sky-400 font-medium">biotech and biosecurity</span> —
+                the engineering infrastructure that makes biological manufacturing
+                reliable, safe, and scalable. I&apos;m drawn to problems where control
+                systems thinking meets the physical world.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
               <p className="text-slate-300 leading-relaxed">
-                Outside of engineering, I enjoy exploring the California coast
-                on a longboard and tracking down rare Pokémon cards (with a
-                bot&apos;s help). Expected graduation:{" "}
+                Expected graduation:{" "}
                 <span className="text-sky-400 font-medium">June 2027</span>.
               </p>
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.2} direction="right" className="md:col-span-2">
-            <div className="bg-[#041428] border border-slate-800/60 rounded-xl p-6">
-              <p className="text-sky-400 font-mono text-sm mb-4 tracking-wide">
-                {"// technologies I work with"}
+          <FadeIn delay={0.2} direction="right" className="md:col-span-2 space-y-4">
+            {/* Education card */}
+            <div className="bg-[#041428] border border-slate-800/60 rounded-xl p-5">
+              <p className="text-sky-400 font-mono text-xs mb-3 tracking-wide uppercase">
+                Education
+              </p>
+              <p className="text-white font-semibold text-sm">UC Santa Cruz</p>
+              <p className="text-slate-400 text-sm">B.S. Robotics Engineering</p>
+              <p className="text-slate-500 text-xs font-mono mt-1">Sep 2023 – Jun 2027</p>
+              <div className="mt-3 pt-3 border-t border-slate-800/60">
+                <p className="text-slate-500 text-xs mb-1">Relevant Coursework</p>
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  Embedded Systems · Logic Design · Systems &amp; Signals · Data Structures
+                </p>
+              </div>
+            </div>
+            {/* Skills card */}
+            <div className="bg-[#041428] border border-slate-800/60 rounded-xl p-5">
+              <p className="text-sky-400 font-mono text-xs mb-3 tracking-wide uppercase">
+                Technical Skills
               </p>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
                 {skills.map((skill) => (

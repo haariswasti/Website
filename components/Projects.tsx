@@ -3,26 +3,22 @@ import { GithubIcon } from "./SocialIcons";
 
 const projects = [
   {
-    name: "Subway Slug",
+    name: "Subway Slug — FPGA Real-Time Control System",
     description:
-      "A real-time FPGA arcade game implemented in Verilog on the BASYS3 development board. Features a custom VGA controller running at 25MHz/60FPS, finite-state machines for game logic, and race-condition-safe frame synchronization between game and display logic.",
-    tags: ["Verilog", "FPGA", "VGA", "BASYS3", "Digital Logic"],
+      "Fully synchronous real-time system on a BASYS3 FPGA using edge-triggered flip-flops and finite state machines only. Custom VGA controller (Hsync/Vsync + pixel pipeline) operating at 25 MHz, rendering at 60 FPS. Frame-synchronous update mechanisms prevent race conditions and ensure timing-correct multi-agent interaction.",
+    tags: ["Verilog", "FPGA", "BASYS3", "VGA Controller", "FSM", "Digital Logic"],
     github: "https://github.com/haariswasti",
     highlight: true,
+    period: "Jun – Sep 2025",
   },
   {
     name: "Inventory Monitoring Bot",
     description:
-      "Python web scraper tracking Pokémon card stock in real-time across Target's website. Implemented auto-checkout prototype with browser automation and real-time notifications. Successfully used to purchase $200+ in products during high-demand restocks.",
-    tags: ["Python", "Selenium", "Web Scraping", "Automation", "Discord API"],
+      "Automated stock monitoring system tracking Pokémon card listings on Target's website with real-time inventory detection and instant notifications when out-of-stock items become available. Includes an auto-checkout prototype via browser automation. Successfully used to purchase $200+ in products.",
+    tags: ["Python", "Browser Automation", "Web Scraping", "Real-Time Monitoring"],
     github: "https://github.com/haariswasti",
-  },
-  {
-    name: "GitHub Classroom Analytics",
-    description:
-      "A React dashboard built for UCSC Blueprint that gives instructors visibility into student activity — commits, pull requests, and test coverage trends over time. Integrates with the GitHub API and Firebase for real-time data and persistent session management.",
-    tags: ["React", "TypeScript", "Firebase", "GitHub API", "Chart.js"],
-    github: "https://github.com/haariswasti",
+    highlight: false,
+    period: "Jul – Aug 2025",
   },
 ];
 
@@ -38,7 +34,7 @@ export default function Projects() {
           </h2>
         </FadeIn>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
           {projects.map((project, i) => (
             <FadeIn key={project.name} delay={i * 0.12}>
               <div
@@ -70,7 +66,8 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-sky-400 transition-colors">
+                  <p className="font-mono text-xs text-slate-600 mb-1">{project.period}</p>
+                  <h3 className="text-base font-semibold text-white mb-2 group-hover:text-sky-400 transition-colors">
                     {project.name}
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed flex-1 mb-4">

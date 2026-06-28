@@ -2,37 +2,44 @@ import FadeIn from "./FadeIn";
 
 const experiences = [
   {
+    company: "Amrixa Pharmaceuticals",
+    role: "Process Engineer",
+    period: "Jan 2026 – Jun 2026",
+    location: "San Marcos, CA",
+    highlight: true,
+    bullets: [
+      "Integrated liquid handling systems with laboratory instrumentation to automate multi-step experimental workflows, minimizing manual intervention and reducing human error in critical assay steps.",
+      "Programmed and optimized automated liquid handling robots for high-throughput laboratory workflows, improving throughput by 25% while maintaining repeatable precision across runs.",
+      "Developed and documented standard operating procedures (SOPs) for automated workflows, ensuring GMP-compliant process traceability and enabling seamless handoff between shifts.",
+      "Performed root cause analysis on process deviations, applying systematic fault isolation to maintain process capability across high-volume production runs.",
+    ],
+    tags: ["Liquid Handling Automation", "GMP", "SOP Development", "Process Optimization", "High-Throughput Workflows", "Root Cause Analysis"],
+  },
+  {
     company: "Bay Smart Solutions",
     role: "Software Engineering Intern",
     period: "Jun 2025 – Sep 2025",
+    location: "Pleasanton, CA",
+    highlight: false,
     bullets: [
-      "Built an AI staging recommender using PyTorch + ResNet-50, achieving 50ms CPU inference.",
-      "Reduced property preparation time by 50% by automating furniture staging decisions.",
-      "Deployed model in a FastAPI microservice integrated into the company's existing workflow.",
+      "Developed an AI staging recommender in Python using PyTorch and ResNet-50, indexing 300+ staged room references via computer vision across 50–75 photos per home — reducing preparation time by 50%.",
+      "Implemented a ResNet-50 feature extraction pipeline generating 2048-dimensional embeddings for similarity-based retrieval, achieving real-time recommendations with 50ms inference on CPU.",
+      "Optimized staging preparation workflows by enabling rapid furniture selection and warehouse inventory tracking, cutting manual effort by 50%.",
     ],
-    tags: ["PyTorch", "ResNet-50", "FastAPI", "Python", "Computer Vision"],
+    tags: ["PyTorch", "ResNet-50", "Python", "Computer Vision", "Process Optimization"],
   },
   {
     company: "UCSC Blueprint",
     role: "Developer",
     period: "Oct 2024 – Jun 2025",
+    location: "Santa Cruz, CA",
+    highlight: false,
     bullets: [
-      "Built a React + Firebase inventory management platform for Loaves & Fishes nonprofit.",
-      "Implemented role-based authentication with real-time database sync for 20+ volunteers.",
-      "Developed a GitHub Classroom analytics dashboard tracking commits, PRs, and test coverage for instructors.",
+      "Engineered a React + Firebase inventory tracking platform for Loaves & Fishes nonprofit, reducing manual stock logging time by 30%.",
+      "Implemented role-based access control via Firebase Authentication, reducing duplicate inventory entries by 75% and improving data accuracy.",
+      "Built a GitHub Classroom analytics tool in React to track student development metrics (commits, PRs, test coverage), streamlining instructor code review.",
     ],
     tags: ["React", "Firebase", "TypeScript", "Node.js", "GitHub API"],
-  },
-  {
-    company: "FormulaSlug",
-    role: "Software Team Member",
-    period: "Sep 2025 – Jun 2026",
-    bullets: [
-      "Designed a Python telemetry pipeline processing 35+ data files from UCSC's electric race car.",
-      "Built interactive visualizations for energy loss and brake efficiency analysis.",
-      "Collaborated with mechanical and electrical subteams to validate sensor calibration.",
-    ],
-    tags: ["Python", "Pandas", "Matplotlib", "CAN Bus", "Data Pipeline"],
   },
 ];
 
@@ -57,16 +64,25 @@ export default function Experience() {
               <FadeIn key={exp.company} delay={i * 0.15}>
                 <div className="relative pl-12 md:pl-16">
                   {/* Timeline dot */}
-                  <div className="absolute left-2.5 md:left-4 top-1.5 w-3 h-3 rounded-full bg-sky-500 border-2 border-[#020b18] shadow-[0_0_10px_rgba(14,165,233,0.5)]" />
+                  <div className={`absolute left-2.5 md:left-4 top-1.5 border-2 border-[#020b18] rounded-full ${exp.highlight ? "w-4 h-4 bg-sky-400 shadow-[0_0_16px_rgba(56,189,248,0.7)]" : "w-3 h-3 bg-sky-600 shadow-[0_0_8px_rgba(14,165,233,0.4)]"}`} />
 
-                  <div className="bg-[#041428] border border-slate-800/60 rounded-xl p-6 hover:border-sky-900/60 transition-colors">
+                  <div className={`relative bg-[#041428] rounded-xl transition-colors ${exp.highlight ? "border border-sky-600/50 hover:border-sky-400/60 shadow-[0_0_40px_rgba(14,165,233,0.08)] p-7" : "border border-slate-800/60 hover:border-sky-900/60 p-6"}`}>
+                    {exp.highlight && (
+                      <>
+                        <div className="absolute -top-px left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
+                        <span className="absolute top-5 right-5 px-2.5 py-0.5 text-xs font-mono rounded-full bg-sky-400/15 text-sky-300 border border-sky-500/40 tracking-wide">
+                          process engineer
+                        </span>
+                      </>
+                    )}
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <h3 className={`font-semibold text-white ${exp.highlight ? "text-xl" : "text-lg"}`}>
                           {exp.role}
                         </h3>
-                        <p className="text-sky-400 font-medium text-sm">
+                        <p className="text-sky-400 font-medium text-sm mt-0.5">
                           {exp.company}
+                          <span className="text-slate-600 font-normal ml-2">· {exp.location}</span>
                         </p>
                       </div>
                       <span className="font-mono text-slate-500 text-sm whitespace-nowrap">

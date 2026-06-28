@@ -14,9 +14,8 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-slate-400 text-lg leading-relaxed mb-10">
-            I&apos;m currently open to internship and co-op opportunities for
-            2026. Whether you have a question, a project idea, or just want to
-            say hi — my inbox is always open.
+            Whether you have a question, a project idea, or just want to connect
+            — my inbox is always open.
           </p>
 
           <a
@@ -38,7 +37,7 @@ export default function Contact() {
               <GithubIcon size={24} />
             </a>
             <a
-              href="https://linkedin.com/in/haaris-wasti/"
+              href="https://linkedin.com/in/haaris-wasti-206545227/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 hover:text-sky-400 transition-colors"

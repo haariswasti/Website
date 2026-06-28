@@ -57,8 +57,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-slate-400 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed"
         >
-          I build things at the intersection of software and hardware — FPGA
-          control systems, AI-powered vision, and embedded robotics.
+          I build intelligent systems at the intersection of software and hardware —
+          from FPGA control systems and AI-powered vision to automating high-throughput
+          laboratory workflows in pharmaceutical manufacturing.
         </motion.p>
 
         <motion.div
@@ -76,7 +77,7 @@ export default function Hero() {
             <GithubIcon size={18} /> GitHub
           </a>
           <a
-            href="https://linkedin.com/in/haaris-wasti/"
+            href="https://linkedin.com/in/haaris-wasti-206545227/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-200 font-medium hover:border-sky-500 hover:text-sky-400 transition-all duration-200"
