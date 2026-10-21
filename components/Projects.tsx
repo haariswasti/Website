@@ -3,12 +3,21 @@ import { GithubIcon } from "./SocialIcons";
 
 const projects = [
   {
+    name: "Sluggers of the Lost Goal — Autonomous Combat Droid",
+    description:
+      "Led software for a fully autonomous droid in a 36-team mechatronics competition. Hierarchical state machine in C on a PIC32 navigates a 4×8 ft field from a random start, locates the opponent by 2 kHz IR beacon, and launches ping-pong ammo. An event-driven service layer fuses four sensor types into debounced events — 5th of 36 teams to pass min-spec, with zero out-of-bounds disqualifications.",
+    tags: ["C", "PIC32", "Event-Driven HSM", "Sensor Fusion", "Embedded Systems"],
+    github: "https://github.com/haariswasti",
+    highlight: true,
+    period: "Apr – Jun 2026",
+  },
+  {
     name: "Subway Slug — FPGA Real-Time Control System",
     description:
       "Fully synchronous real-time system on a BASYS3 FPGA using edge-triggered flip-flops and finite state machines only. Custom VGA controller (Hsync/Vsync + pixel pipeline) operating at 25 MHz, rendering at 60 FPS. Frame-synchronous update mechanisms prevent race conditions and ensure timing-correct multi-agent interaction.",
     tags: ["Verilog", "FPGA", "BASYS3", "VGA Controller", "FSM", "Digital Logic"],
     github: "https://github.com/haariswasti",
-    highlight: true,
+    highlight: false,
     period: "Jun – Sep 2025",
   },
   {
@@ -34,7 +43,7 @@ export default function Projects() {
           </h2>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <FadeIn key={project.name} delay={i * 0.12}>
               <div

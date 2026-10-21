@@ -2,11 +2,25 @@ import FadeIn from "./FadeIn";
 
 const experiences = [
   {
+    company: "Rubrik",
+    role: "Sales Engineering Intern",
+    period: "Jun 2026 – Sep 2026",
+    location: "Austin, TX",
+    highlight: true,
+    badge: "sales engineer",
+    bullets: [
+      "Placed 1st in Rubrik's August SE new hire sizzle demo competition, judged by the Transformation team on technical accuracy, discovery framing, and delivery.",
+      "Ramped on three Rubrik product lines — Microsoft 365 data protection, Identity Resilience, and Agent Cloud — completing 50+ practice demo reps to reach independent end-to-end delivery on all three.",
+      "Built an AI-powered SE enablement tool that intakes a new hire's background and generates a personalized ramp roadmap, replacing a one-size-fits-all program by diagnosing existing skills and sequencing only the gaps.",
+    ],
+    tags: ["Technical Demos", "Discovery", "M365 Data Protection", "Identity Resilience", "Agent Cloud", "AI Enablement"],
+  },
+  {
     company: "Amrixa Pharmaceuticals",
     role: "Process Engineer",
     period: "Jan 2026 – Jun 2026",
     location: "San Marcos, CA",
-    highlight: true,
+    highlight: false,
     bullets: [
       "Integrated liquid handling systems with laboratory instrumentation to automate multi-step experimental workflows, minimizing manual intervention and reducing human error in critical assay steps.",
       "Programmed and optimized automated liquid handling robots for high-throughput laboratory workflows, improving throughput by 25% while maintaining repeatable precision across runs.",
@@ -35,7 +49,7 @@ const experiences = [
     location: "Santa Cruz, CA",
     highlight: false,
     bullets: [
-      "Engineered a React + Firebase inventory tracking platform for Loaves & Fishes nonprofit, reducing manual stock logging time by 30%.",
+      "Engineered a React + Firebase inventory tracking platform for Loaves & Fishes, a nonprofit soup kitchen in the Pajaro Valley, reducing manual stock logging time by 30%.",
       "Implemented role-based access control via Firebase Authentication, reducing duplicate inventory entries by 75% and improving data accuracy.",
       "Built a GitHub Classroom analytics tool in React to track student development metrics (commits, PRs, test coverage), streamlining instructor code review.",
     ],
@@ -68,12 +82,12 @@ export default function Experience() {
 
                   <div className={`relative bg-[#041428] rounded-xl transition-colors ${exp.highlight ? "border border-sky-600/50 hover:border-sky-400/60 shadow-[0_0_40px_rgba(14,165,233,0.08)] p-7" : "border border-slate-800/60 hover:border-sky-900/60 p-6"}`}>
                     {exp.highlight && (
-                      <>
-                        <div className="absolute -top-px left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
-                        <span className="absolute top-5 right-5 px-2.5 py-0.5 text-xs font-mono rounded-full bg-sky-400/15 text-sky-300 border border-sky-500/40 tracking-wide">
-                          process engineer
-                        </span>
-                      </>
+                      <div className="absolute -top-px left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
+                    )}
+                    {exp.badge && (
+                      <span className="absolute top-5 right-5 px-2.5 py-0.5 text-xs font-mono rounded-full bg-sky-400/15 text-sky-300 border border-sky-500/40 tracking-wide">
+                        {exp.badge}
+                      </span>
                     )}
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
                       <div>
@@ -85,7 +99,7 @@ export default function Experience() {
                           <span className="text-slate-600 font-normal ml-2">· {exp.location}</span>
                         </p>
                       </div>
-                      <span className="font-mono text-slate-500 text-sm whitespace-nowrap">
+                      <span className={`font-mono text-slate-500 text-sm whitespace-nowrap ${exp.badge ? "sm:mt-8" : ""}`}>
                         {exp.period}
                       </span>
                     </div>

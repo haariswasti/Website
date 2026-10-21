@@ -47,8 +47,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-400 mb-6"
         >
-          Robotics Engineering{" "}
-          <span className="text-sky-400">@ UC Santa Cruz</span>
+          Sales Engineering{" "}
+          <span className="text-sky-400">· Robotics @ UC Santa Cruz</span>
         </motion.h2>
 
         <motion.p
@@ -57,9 +57,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-slate-400 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed"
         >
-          I build intelligent systems at the intersection of software and hardware —
-          from FPGA control systems and AI-powered vision to automating high-throughput
-          laboratory workflows in pharmaceutical manufacturing.
+          I translate deep technical systems into customer outcomes — from demoing
+          data protection and identity resilience at Rubrik to building AI tools,
+          FPGA control systems, and automated lab workflows.
         </motion.p>
 
         <motion.div

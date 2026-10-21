@@ -7,6 +7,8 @@ const skills = [
   "React", "Node.js", "Flask", "NumPy", "PyTorch",
   // Dev Tools
   "Git", "GitHub", "Docker", "VS Code",
+  // Sales Engineering
+  "Technical Demos", "Discovery", "M365 Data Protection", "Identity Resilience",
   // Domain
   "Liquid Handling Automation", "GMP / SOP", "FPGA / Verilog",
 ];
@@ -29,19 +31,22 @@ export default function About() {
               <p className="text-slate-300 leading-relaxed">
                 I&apos;m a Robotics Engineering student at{" "}
                 <span className="text-sky-400 font-medium">UC Santa Cruz</span>{" "}
-                (Class of 2027), passionate about intelligent systems and advanced
-                manufacturing. My background spans FPGA control systems, AI-powered
-                computer vision, and real-time data pipelines — and most recently,
-                automating high-throughput laboratory workflows in pharmaceutical manufacturing.
+                (Class of 2027) who loves the moment a complex system clicks for
+                someone else. Most recently I was a{" "}
+                <span className="text-sky-400 font-medium">Sales Engineering Intern at Rubrik</span>,
+                where I ramped on Microsoft 365 data protection, Identity Resilience, and
+                Agent Cloud — and placed 1st in the August SE new hire demo competition.
               </p>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-slate-300 leading-relaxed">
-                My work and writing have increasingly converged on{" "}
-                <span className="text-sky-400 font-medium">biotech and biosecurity</span> —
-                the engineering infrastructure that makes biological manufacturing
-                reliable, safe, and scalable. I&apos;m drawn to problems where control
-                systems thinking meets the physical world.
+                My engineering background is what makes the customer conversations
+                work: I&apos;ve automated high-throughput lab workflows as a process
+                engineer, shipped computer vision models, and written embedded C and
+                Verilog for real-time systems. I&apos;m drawn to roles where{" "}
+                <span className="text-sky-400 font-medium">technical depth meets discovery</span> —
+                understanding the problem first, then showing exactly how the
+                technology solves it. My writing also explores biotech and biosecurity.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>

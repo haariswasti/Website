@@ -3,8 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Haaris Wasti — Robotics Engineering",
-  description: "Personal portfolio of Haaris Wasti, Robotics Engineering student at UC Santa Cruz.",
+  title: "Haaris Wasti — Sales Engineering & Robotics",
+  description: "Personal portfolio of Haaris Wasti, Sales Engineer and Robotics Engineering student at UC Santa Cruz.",
 };
 
 export default function RootLayout({
